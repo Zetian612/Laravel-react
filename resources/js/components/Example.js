@@ -4,11 +4,20 @@ import TransferForm from './TransferForm';
 import TransferList from './TransferList'
 
 function Example() {
+
+    constructor(props){
+        super(props)
+        this.state = {
+            money: 0.0,
+            transfers: [],
+            error: null
+        }
+    }
     return (
         <div className="container">
             <div className="row justify-content-center">
                 <div className="col-md-12-m-t-md">
-                    <h1 className="title"> $ 1000 </h1>
+                    <h1 className="title"> $ {this.state.money} </h1>
                 </div>
                 <div className="col-md-12">
                     <TransferForm />
@@ -19,8 +28,8 @@ function Example() {
             </div>
         </div>
     );
-}
 
+}
 export default Example;
 
 if (document.getElementById('example')) {
