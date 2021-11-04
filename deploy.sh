@@ -2,4 +2,4 @@
 yes | php artisan migrate:refresh
 
 # Run Seeds
-php artisan db:seed
+yes | php artisan db:seed
