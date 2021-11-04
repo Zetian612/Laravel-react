@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import TransferForm from './TransferForm';
 import TransferList from './TransferList'
-import url from './url';
+import url from '../url';
 export class Example extends Component{
 
     // Creamos el constructor
