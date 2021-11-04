@@ -1,14 +1,18 @@
 import React from 'react';
 
 
-const TransferForm = () => (
-			<form className="form-inline justify-content-center">
+const TransferForm = ({form, onChange, onSubmit}) => (
+			<form className="form-inline justify-content-center"
+                  onSubmit={onSubmit}
+            >
                 <div className="form-goup mb-2">
                     <input 
                         type="text"
                         className="form-control"
                         placeholder="Description"
                         name="description"
+                        value={form.description}
+                        onChange={onChange}
                     />
                 </div>
                 <div className="input-group ms-sm-2 mb-2">
@@ -16,9 +20,11 @@ const TransferForm = () => (
                         <div className="input-group-text">$</div>
                     </div>
                     <input 
-                        type="text"
+                        type="number"
                         className="form-control"
                         name="amount"
+                        value={form.amount}
+                        onChange={onChange}
                     />
                 </div>
                 <button
