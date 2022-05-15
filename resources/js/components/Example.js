@@ -10,9 +10,9 @@ export class Example extends Component{
         super(props)
         // definimos el state
         this.state = {
-            money:0.0,
+            money: 0.0,
             transfers: [],
-            error: null,
+            error: '',
             form: {
                 description: '',
                 amount: '',
@@ -40,12 +40,13 @@ export class Example extends Component{
 
             this.setState({
                 transfers: this.state.transfers.concat(data),
-                money: this.state.money + (parseInt(data.amount))
+                money: this.state.money + (parseInt(data.amount)),
+                error: ""
             })
 
         } catch (error) {
             this.setState({
-                error
+                error: "Error while processing the request" + error
             })
         }
     }
@@ -56,7 +57,7 @@ export class Example extends Component{
             ...this.state.form,
             [e.target.name]: e.target.value
         }
-       }) 
+       })
     }
         async componentDidMount(){
             try{
@@ -64,13 +65,14 @@ export class Example extends Component{
                 let data = await res.json()
                 this.setState({
                     money: data.money,
-                    transfers: data.transfers
+                    transfers: data.transfers,
+                    error: ""
                 })
             } catch(error){
                 this.setState({
-                    error
+                    error: "No se pudo obtener el dinero."
                 })
-            }    
+            }
     }
 
     render(){
@@ -78,11 +80,13 @@ export class Example extends Component{
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-md-12-m-t-md">
+
                         {/* mostramos el valos del state en money */}
                         <p className="title"> $ {this.state.money} </p>
+                        <p style={{ color: 'red'}}>{ this.state.error}</p>
                     </div>
                     <div className="col-md-12">
-                        <TransferForm 
+                        <TransferForm
                         form={this.state.form}
                         onChange={this.handleChange}
                         onSubmit={this.handleSubmit}
@@ -90,7 +94,7 @@ export class Example extends Component{
                     </div>
                 </div>
             <div className="m-t-md">
-                <TransferList 
+                <TransferList
                 transfers={this.state.transfers}
                 />
             </div>
