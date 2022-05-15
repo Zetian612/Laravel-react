@@ -2415,7 +2415,7 @@ var TransferForm = function TransferForm(_ref) {
         value: form.description,
         onChange: onChange
       })
-    }), "\xA0", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "input-group ms-sm-2 mb-2",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
         className: "input-group-prepend",
@@ -2427,7 +2427,6 @@ var TransferForm = function TransferForm(_ref) {
         type: "number",
         className: "form-control",
         name: "amount",
-        placeholder: "Ej: -100 or 100",
         value: form.amount,
         onChange: onChange
       })]
@@ -2494,7 +2493,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-var url = 'http://127.0.0.1:8000';
+var url = 'https://laravel-react-production.up.railway.app/';
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (url);
 
 /***/ }),
